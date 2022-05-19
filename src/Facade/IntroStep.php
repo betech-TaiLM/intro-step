@@ -22,7 +22,7 @@ class IntroStep extends Facade {
                 'is_auth'      => Session::has('user'),
                 'is_auth_only' => $step->auth_only,
                 'step'         => $step,
-                'route'        => route('intro-step-admin.api.user.store'),
+                'route'        => route('admin.store-intro-step'),
             ];
 
             if (Session::has('user')) {
