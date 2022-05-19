@@ -1,10 +1,10 @@
 <?php
 namespace Bisync\IntroStep\Controllers\Api;
 
-use App\Models\IntroStepStepList;
 use App\Models\IntroStepUserList;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Models\IntroStepStepList;
 
 class UserController extends Controller {
     public function store(Request $request) {

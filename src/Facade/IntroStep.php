@@ -1,9 +1,9 @@
 <?php
 namespace Bisync\IntroStep\Facade;
 
-use App\Models\IntroStepStepList;
 use App\Models\IntroStepUserList;
 use Illuminate\Support\Facades\Facade;
+use Modules\Admin\Models\IntroStepStepList;
 
 class IntroStep extends Facade {
     protected static function getFacadeAccessor() {
