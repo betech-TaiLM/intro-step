@@ -1,32 +1,23 @@
 <?php
 namespace Bisync\IntroStep\Controllers\Api;
 
-use App\Models\IntroStepUserList;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Admin\Models\IntroStepStepList;
+use Modules\Admin\Models\UserMaster;
+use Session;
 
 class UserController extends Controller {
     public function store(Request $request) {
-
-        $request->validate(['step_id' => 'bail|required|integer|exists:intro_step_step_list,id']);
-
-        $step = IntroStepStepList::findOrFail($request->step_id);
-
-        if (auth()->check()) {
-            $userStep = IntroStepUserList::getUserStep($step);
-            $db       = [
-                'last_action'  => now(),
-                'is_completed' => $request->completed ? true : false,
-                'last_step'    => $request->last_step,
-                'completed_at' => $request->completed ? now() : null,
+        if (Session::has('user')) {
+            $user = UserMaster::where('member_id', Session::get('user')['id'])->first();
+            $db   = [
+                'tutorial_finished_flag' => $request->completed ? true : false,
             ];
-            if ($userStep && !$userStep->is_completed) {
-                $userStep->update($db);
-            } elseif (!$userStep) {
-                IntroStepUserList::create(array_merge([
-                    config('intro-step.user_column') => auth()->user()->id,
-                    'intro_step_step_list_id'        => $step->id,
+            if ($user) {
+                $user->update($db);
+            } elseif ($user->isEmpty()) {
+                UserMaster::create(array_merge([
+                    'member_id' => Session::get('user')['id'],
                 ], $db));
             }
         }
