@@ -13,10 +13,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('vendor/whtht/intro-step/assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/bisync/intro-step/assets/css/font-awesome.min.css')}}">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{asset('vendor/whtht/intro-step/assets/css/dashboard.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/whtht/intro-step/vue/app/index.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/bisync/intro-step/assets/css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/bisync/intro-step/vue/app/index.css')}}">
 </head>
 
 <body>
@@ -66,7 +66,7 @@
     window.i18n = {!! json_encode($i18n) !!};
     window.apiRoute = '{{route("intro-step-admin.api.index")}}';
 </script>
-<script src="{{asset('vendor/whtht/intro-step/vue/app/index.js')}}"></script>
+<script src="{{asset('vendor/bisync/intro-step/vue/app/index.js')}}"></script>
 
 </body>
 </html>

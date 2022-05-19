@@ -12,12 +12,12 @@ Make intro on laravel with a panel.
 Install composer package to your project.
 with this command
 ```php
-composer require whtht/intro-step
+composer require bisync/intro-step
 ```
 ###### Step 2
 Vendor publishing with this code.
 ```php
-php artisan vendor:publish --force --provider=Whtht\IntroStep\IntroStepServiceProvider
+php artisan vendor:publish --force --provider=Bisync\IntroStep\IntroStepServiceProvider
 ```
 
 ###### Step 3
@@ -42,13 +42,13 @@ php artisan migrate --seed
 ###### Step 5
 Append `providers` array in `config/app.php`
 ```php
-\Whtht\IntroStep\IntroStepServiceProvider::class,
+\Bisync\IntroStep\IntroStepServiceProvider::class,
 ```
 
 ###### Step 6
 Append `aliases` array in `config/app.php`
 ```php
-"IntroStep" => Whtht\IntroStep\IntroStep::class,
+"IntroStep" => Bisync\IntroStep\IntroStep::class,
 ```
 
 ###### Step 7

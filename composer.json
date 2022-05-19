@@ -1,5 +1,5 @@
 {
-    "name": "whtht/intro-step",
+    "name": "bisync/intro-step",
     "description": "Laravel intro step plugin with introjs",
     "keywords": ["laravel","intro"],
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Whtht\\IntroStep\\": "src/"
+            "Bisync\\IntroStep\\": "src/"
         }
     },
     "require-dev": {
@@ -25,10 +25,10 @@
     "extra":{
         "laravel":{
             "providers":[
-                "Whtht\\IntroStep\\IntroStepServiceProvider"
+                "Bisync\\IntroStep\\IntroStepServiceProvider"
             ],
             "aliases":{
-                "IntroStep": "Whtht\\IntroStep\\Facade\\IntroStep"
+                "IntroStep": "Bisync\\IntroStep\\Facade\\IntroStep"
             }
         }
     },
