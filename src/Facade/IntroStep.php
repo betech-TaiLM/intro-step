@@ -1,9 +1,10 @@
 <?php
 namespace Bisync\IntroStep\Facade;
 
-use App\Models\IntroStepUserList;
 use Illuminate\Support\Facades\Facade;
 use Modules\Admin\Models\IntroStepStepList;
+use Modules\Admin\Models\UserMaster;
+use Session;
 
 class IntroStep extends Facade {
     protected static function getFacadeAccessor() {
@@ -24,9 +25,9 @@ class IntroStep extends Facade {
                 'route'        => route('intro-step-admin.api.user.store'),
             ];
 
-            if (auth()->check()) {
-                $userStep = IntroStepUserList::getUserStep($step);
-                $with     = array_merge(['user' => $userStep], $with);
+            if (Session::has('user')) {
+                $user = UserMaster::getUserByMemberId(Session::get('user')['id']);
+                $with = array_merge(['user' => $user], $with);
             }
         }
 
