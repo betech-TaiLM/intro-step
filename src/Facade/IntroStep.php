@@ -25,7 +25,7 @@ class IntroStep extends Facade {
             ];
 
             if (Session::has('user')) {
-                $user = Session::get('user')->user_master->id;
+                $user = Session::get('user')->user_master;
                 $with = array_merge(['user' => $user], $with);
             }
         }
