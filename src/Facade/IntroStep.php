@@ -3,7 +3,6 @@ namespace Bisync\IntroStep\Facade;
 
 use Illuminate\Support\Facades\Facade;
 use Modules\Admin\Models\IntroStepStepList;
-use Modules\Admin\Models\UserMaster;
 use Session;
 
 class IntroStep extends Facade {
@@ -26,7 +25,7 @@ class IntroStep extends Facade {
             ];
 
             if (Session::has('user')) {
-                $user = UserMaster::getUserByMemberId(Session::get('user')['id']);
+                $user = Session::get('user')->user_master->id;
                 $with = array_merge(['user' => $user], $with);
             }
         }

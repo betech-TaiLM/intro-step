@@ -9,16 +9,12 @@ use Session;
 class UserController extends Controller {
     public function store(Request $request) {
         if (Session::has('user')) {
-            $user = UserMaster::where('member_id', Session::get('user')['id'])->first();
+            $user = UserMaster::find(Session::get('user')->user_master->id);
             $db   = [
                 'tutorial_finished_flag' => $request->completed ? true : false,
             ];
             if ($user) {
                 $user->update($db);
-            } elseif ($user->isEmpty()) {
-                UserMaster::create(array_merge([
-                    'member_id' => Session::get('user')['id'],
-                ], $db));
             }
         }
         return response()->json([], 204);
