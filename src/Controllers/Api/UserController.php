@@ -1,9 +1,9 @@
 <?php
 namespace Bisync\IntroStep\Controllers\Api;
 
-use App\Models\UserMaster;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Models\UserMaster;
 use Session;
 
 class UserController extends Controller {
