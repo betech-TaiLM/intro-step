@@ -1,8 +1,8 @@
 <?php
 namespace Bisync\IntroStep\Controllers\Api;
 
-use App\Models\IntroStepStepList;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Models\IntroStepStepList;
 
 class IndexController extends Controller {
     public function index() {
