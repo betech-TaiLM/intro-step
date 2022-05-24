@@ -2,8 +2,8 @@
 namespace Bisync\IntroStep\Controllers\Api;
 
 use App\Http\Requests\IntroStep\Api\Steps\Store;
+use App\Models\IntroStepStepList;
 use Illuminate\Routing\Controller;
-use Modules\Admin\Models\IntroStepStepList;
 
 class StepsController extends Controller {
     public function index() {

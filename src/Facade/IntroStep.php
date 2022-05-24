@@ -1,8 +1,8 @@
 <?php
 namespace Bisync\IntroStep\Facade;
 
+use App\Models\IntroStepStepList;
 use Illuminate\Support\Facades\Facade;
-use Modules\Admin\Models\IntroStepStepList;
 use Session;
 
 class IntroStep extends Facade {
